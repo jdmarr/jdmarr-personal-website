@@ -10,26 +10,32 @@
 </div>
 
 </nav>
+</head>
 
-</h1>
 <img class="rounded mx-auto d-block horizontal-image" src="/image/akihabara.jpg" alt="">
 <br>
 <div class="container">
   <p>I grew up in Ottawa, Canada, in the village of Richmond. I did my undergraduate studies in Electrical Engineering at Queen's University. While at school, I was heavily involved with the Queen's Space Engineering Team,
     <% if( qsetLinkValid ){ %>
-      <a href=<%= qsetLink %> target="_blank" rel="noopener noreferrer">(QSET)</a>,
+    <a href=<%= qsetLink %> target="_blank" rel="noopener noreferrer">(QSET)</a>,
     <% } %>
-even serving as team captain in my Junior year. It was here that I gained my passion for robotics. Working in an interdisciplinary setting, and seeing all of the pieces of our Mars rover come together was incredibly rewarding.</p>
-  <p>Wanting to continue down the robotics path, I pursued a Master's degree at the University of Toronto, working under Dr. Jonathan Kelly. My thesis title was <b>Unified Spatiotemporal Calibration of Egomotion Sensors and 2D Lidars in Arbitrary Environments</b>, and I received my degree in the fall of 2018.
+    even serving as team captain in my Junior year. It was here that I gained my passion for robotics. Working in an interdisciplinary setting, and seeing all of the pieces of our Mars rover come together was incredibly rewarding.
+  </p>
+  <p>Wanting to continue down the robotics path, I pursued a Master's degree at the University of Toronto, working under Dr. Jonathan Kelly. My thesis title was <b>Unified Spatiotemporal Calibration of Egomotion Sensors and 2D Lidars in Arbitrary
+      Environments</b>, and I received my degree in the fall of 2018.
     <% if( starsLinkValid ){ %>
     <a href=<%= starsLink %> target="_blank" rel="noopener noreferrer">(Check out my former research group, STARSLab).</a>
-  <% } %>
-</p>
-  <p>I now work at Nvidia, where I have the opportunity to put my love of robotics into practice every day. We are building autonomy solutions for both consumer and industrial platforms. This necessarily means a modular design, that can be used with both mass-market sensor suites (as simple as a single camera on a car), as well as more complex, industrial-grade setups (multi-lidar + multi-radar + multi-camera systems).
+    <% } %>
+  </p>
+  <p>I now work at Nvidia, where I have the opportunity to put my love of robotics into practice every day. We are building autonomy solutions for both consumer and industrial platforms. This necessarily means a modular design, that can be used with
+    both mass-market sensor suites (as simple as a single camera on a car), as well as more complex, industrial-grade setups (multi-lidar + multi-radar + multi-camera systems).
     <% if( nvidiaLinkValid ){ %>
     For more info on our localization solution, <a href=<%= nvidiaLink %> target="_blank" rel="noopener noreferrer">click here.</a>
-  <% } %>
-</p>
-  <p>In my free time, I love to run and hike. I completed my first half-marathon in 2019 and hope to do more. I also love to travel to new places. My favourite cities that I've visited are Tokyo, Japan, and Taipei, Taiwan, where I was lucky enough to spend a research term abroad at National Taiwan Normal University.</p>
+    <% } %>
+  </p>
+  <p>In my free time, I love to run and hike. I completed my first half-marathon in 2019 and hope to do more. I also love to travel to new places. My favourite cities that I've visited are Tokyo, Japan, and Taipei, Taiwan, where I was lucky enough to
+    spend a research term abroad at National Taiwan Normal University.</p>
 
-<%- include("partials/footer") -%>
+</div>
+
+</html>
