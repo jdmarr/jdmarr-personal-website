@@ -12,6 +12,18 @@ app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
 
+function checkWebsite(url) {
+  return new Promise((resolve, reject) => {
+    https
+      .get(url, function(res) {
+        resolve(res.statusCode === 200);
+      })
+      .on("error", function(e) {
+        resolve(false);
+      });
+  })
+}
+
 app.get("/", (req, res) => {
   res.render("home", {
     homeParagraph: homeContent
@@ -20,18 +32,12 @@ app.get("/", (req, res) => {
 
 app.get("/about", (req, res) => {
   const qsetLink = "https://qset.ca";
-  let qsetLinkValid = false;
   const starsLink = "https://starslab.ca/";
-  let starsLinkValid = false;
   const nvidiaLink = "https://news.developer.nvidia.com/drive-labs-how-localization-helps-vehicles-find-their-way/";
-  let nvidiaLinkValid = false;
 
-  https.get(qsetLink, (qsetRes) => {
-    qsetLinkValid = qsetRes.statusCode === 200;
-    https.get(starsLink, (starsRes) => {
-      starsLinkValid = starsRes.statusCode === 200;
-      https.get(nvidiaLink, (nvidiaRes) => {
-        nvidiaLinkValid = nvidiaRes.statusCode === 200;
+  checkWebsite(qsetLink).then(qsetLinkValid => {
+    checkWebsite(starsLink).then(starsLinkValid => {
+      checkWebsite(nvidiaLink).then(nvidiaLinkValid => {
         res.render("about", {
           qsetLinkValid: qsetLinkValid,
           qsetLink: qsetLink,
@@ -43,6 +49,7 @@ app.get("/about", (req, res) => {
       });
     });
   });
+
 });
 
 app.get("/contact", (req, res) => {
